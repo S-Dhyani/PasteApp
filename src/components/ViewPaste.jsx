@@ -13,7 +13,7 @@ const ViewPaste = () => {
   // Filter pastes based on search term (by title or content)
   const paste = pastes.find((paste) => paste._id === id);
 
-  console.log("Paste->",paste);
+  // console.log("Paste->",paste);
   return (
     <div className="w-full h-full py-10 max-w-[1200px] mx-auto px-5 lg:px-0">
       <div className="flex flex-col gap-y-5 items-start">
