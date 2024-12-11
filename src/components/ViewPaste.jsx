@@ -6,12 +6,12 @@ import { useParams } from "react-router-dom";
 const ViewPaste = () => {
   const { id } = useParams();
 
-  console.log(id)
+ 
 
   const pastes = useSelector((state) => state.paste.pastes);
 
   // Filter pastes based on search term (by title or content)
-  const paste = pastes.filter((paste) => paste._id === id)[0];
+  const paste = pastes.find((paste) => paste._id === id);
 
   console.log("Paste->",paste);
   return (
@@ -22,7 +22,7 @@ const ViewPaste = () => {
           placeholder="Title"
           value={paste.title}
           disabled
-          className="w-full bg-slate-800 text-white border border-input rounded-md p-2"
+          className="w-full bg-slate-800 text-white border border-[rgba(128,121,121,0.3)]  rounded-md p-2"
         />
         <div
           className={`w-full flex flex-col items-start relative rounded bg-opacity-10 border border-[rgba(128,121,121,0.3)] backdrop-blur-2xl`}
@@ -61,7 +61,7 @@ const ViewPaste = () => {
             value={paste.content}
             disabled
             placeholder="Write Your Content Here...."
-            className="w-full p-3 bg-slate-800 focus-visible:ring-0"
+            className="w-full p-3 bg-inherit focus-visible:ring-0"
             style={{
               caretColor: "#000",
             }}

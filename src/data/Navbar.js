@@ -1,10 +1,10 @@
 export const NavbarData = [
   {
     path:"/",
-    title:"Home",
+    title:"HOME",
   },
   {
     path:"/pastes",
-    title:"Paste",
+    title:"PASTES",
   },
 ]
