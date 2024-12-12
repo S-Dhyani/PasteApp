@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react"; // Import useState
 import { removeFromPastes } from "../redux/pasteSlice";
 import { FormatDate } from "../utlis/formatDate";
-
+import Link from 'react-router-dom'
 const Paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
   const dispatch = useDispatch();
@@ -60,12 +60,12 @@ const Paste = () => {
                         className="p-2 rounded-[0.2rem] bg-white border border-[#c7c7c7]  hover:bg-transparent group hover:border-blue-500"
                         // onClick={() => toast.error("Not working")}
                       >
-                        <a href={`/?pasteId=${paste?._id}`}>
+                        <Link to={`/?pasteId=${paste?._id}`}>
                           <PencilLine
                             className="text-black group-hover:text-blue-500"
                             size={20}
                           />
-                        </a>
+                        </Link>
                       </button>
                       <button
                         className="p-2 rounded-[0.2rem] bg-white border border-[#c7c7c7]  hover:bg-transparent group hover:border-pink-500"
